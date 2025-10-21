@@ -1,0 +1,16 @@
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Neon 
+@mixin neon-glow($color) {
+  text-shadow: 0 0 10px $color, 0 0 20px $color, 0 0 40px $color;
+  box-shadow: 0 0 10px $color, 0 0 20px $color, 0 0 40px $color;
+}
+
+@mixin smooth-transition {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,41 @@
+@media (max-width: 1200px) {
+  .clock-container {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 976px) {
+  .clock-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock-container {
+    width: 200px;
+    height: 200px;
+
+    .numbers span {
+      font-size: 14px;
+      transform: rotate(calc(30deg * var(--i))) translateY(-95px)
+        rotate(calc(-30deg * var(--i)));
+    }
+  }
+
+  .info-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .clock-container {
+    width: 180px;
+    height: 180px;
+  }
+}

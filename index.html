@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<title>Neon Clock</title> 
+<link rel="stylesheet" href="dist/style.css" /> 
+</head> 
+
+<body> 
+<!-- 🔵 ANIMATED BACKGROUND --> 
+<div class="animated-bg"></div> 
+
+<!-- 🕒 WATCH CONTAINER --> 
+<section class="clock-section"> 
+<div class="clock-container"> 
+<div class="clock"> 
+<!-- Watch face --> 
+<div class="center-dot"></div> 
+<div class="hand hour" id="hour"></div> 
+<div class="hand minute" id="minute"></div> 
+<div class="hand second" id="second"></div> 
+
+<!-- Numbers --> 
+<div class="numbers"> 
+<span style="--i:1">1</span> 
+<span style="--i:2">2</span> 
+<span style="--i:3">3</span> 
+<span style="--i:4">4</span> 
+<span style="--i:5">5</span> 
+<span style="--i:6">6</span> 
+<span style="--i:7">7</span> 
+<span style="--i:8">8</span> 
+<span style="--i:9">9</span> 
+<span style="--i:10">10</span> 
+<span style="--i:11">11</span> 
+<span style="--i:12">12</span> 
+</div> 
+</div> 
+</div> 
+</section> 
+
+<!-- 🔮 OBSERVER SECTION (for scroll effect) --> 
+<section class="info-section"> 
+<div class="info-content">
+<h2>Neon Clock Design</h2>
+<p>
+This clock is made entirely with HTML, SCSS, and JavaScript. It creates a modern look with neon lights,
+animations, and responsive design.
+</p>
+</div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0011ff, #8a2be2, #ff00ff, #00ffff);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.clock-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(20, 20, 30, 0.6);
+  border: 3px solid #8a2be2;
+  position: relative;
+  box-shadow: 0 0 25px #8a2be2;
+  transition: all 0.3s ease;
+}
+.clock-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffff, 0 0 80px #ff00ff;
+}
+
+.clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock .center-dot {
+  width: 12px;
+  height: 12px;
+  background: #00ffff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+.clock .hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 10px;
+}
+.clock .hour {
+  width: 6px;
+  height: 70px;
+  background: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+.clock .minute {
+  width: 4px;
+  height: 100px;
+  background: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+.clock .second {
+  width: 2px;
+  height: 110px;
+  background: #8a2be2;
+  text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+  box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+}
+.clock .numbers {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.clock .numbers span {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i))) translateY(-130px) rotate(calc(-30deg * var(--i)));
+  color: #fff;
+  text-shadow: 0 0 10px #b19cd9, 0 0 20px #b19cd9, 0 0 40px #b19cd9;
+  box-shadow: 0 0 10px #b19cd9, 0 0 20px #b19cd9, 0 0 40px #b19cd9;
+}
+
+.info-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease;
+}
+.info-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.info-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+.info-section p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+@media (max-width: 1200px) {
+  .clock-container {
+    width: 280px;
+    height: 280px;
+  }
+}
+@media (max-width: 976px) {
+  .clock-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (max-width: 480px) {
+  .clock-container {
+    width: 200px;
+    height: 200px;
+  }
+  .clock-container .numbers span {
+    font-size: 14px;
+    transform: rotate(calc(30deg * var(--i))) translateY(-95px) rotate(calc(-30deg * var(--i)));
+  }
+  .info-section h2 {
+    font-size: 1.6rem;
+  }
+  .info-section p {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 450px) {
+  .clock-container {
+    width: 180px;
+    height: 180px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,120 @@
+@import 'variables';
+@import 'mixins';
+
+.clock-section {
+  @include flex-center;
+  min-height: 100vh;
+}
+
+.clock-container {
+  @include flex-center;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  background: rgba(20, 20, 30, 0.6);
+  border: 3px solid $neon-purple;
+  position: relative;
+  box-shadow: 0 0 25px $neon-purple;
+  @include smooth-transition;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px $neon-blue, 0 0 80px $neon-pink;
+  }
+}
+
+.clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  @include flex-center;
+
+  .center-dot {
+    width: 12px;
+    height: 12px;
+    background: $neon-blue;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    @include neon-glow($neon-blue);
+  }
+
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 10px;
+  }
+
+  .hour {
+    width: 6px;
+    height: 70px;
+    background: $neon-pink;
+    @include neon-glow($neon-pink);
+  }
+
+  .minute {
+    width: 4px;
+    height: 100px;
+    background: $neon-blue;
+    @include neon-glow($neon-blue);
+  }
+
+  .second {
+    width: 2px;
+    height: 110px;
+    background: $neon-purple;
+    @include neon-glow($neon-purple);
+  }
+
+  .numbers {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    color: white;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 20px;
+
+    span {
+      position: absolute;
+      transform: rotate(calc(30deg * var(--i))) translateY(-130px)
+        rotate(calc(-30deg * var(--i)));
+      color: #fff;
+      @include neon-glow($neon-light);
+    }
+  }
+}
+
+.info-section {
+  min-height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  font-family: $font-family;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    @include neon-glow($neon-pink);
+  }
+
+  p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+}
