@@ -20,10 +20,10 @@ No images or sound files are used — everything is generated with pure code.
 
 | Technology | Purpose |
 |-------------|----------|
-| **HTML5** | Page structure |
-| **SCSS (Sass)** | Styling and neon UI design |
-| **JavaScript (ES6)** | Clock logic & intersection observer |
-| **VS Code Live Server** | Local preview |
+| **![HTML](https://skillicons.dev/icons?i=html)** | Page structure |
+| **![SCSS](https://skillicons.dev/icons?i=scss)** | Styling and neon UI design |
+| **![JavaScript](https://skillicons.dev/icons?i=js)** | Clock logic & intersection observer |
+| **![VS Code](https://skillicons.dev/icons?i=vscode)** | Local preview |
 
 ---
 
