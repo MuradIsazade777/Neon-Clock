@@ -2,7 +2,6 @@
 
 A modern, fully responsive **Neon Clock** built with **HTML**, **SCSS**, and **JavaScript** — featuring smooth animations, neon glow effects, and an animated gradient background.  
 No images or sound files are used — everything is generated with pure code.
-
 ---
 
 ## 🚀 Features
